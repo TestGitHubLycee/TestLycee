@@ -42,7 +42,7 @@ class C_VideoCapture
 		
         AnsiString FileNameFrame,FileNameVideo;
 
-		C_VideoCapture();
+		C_VideoCapture();//888
 		~C_VideoCapture();
 
 		void RechercherPeripherique();
