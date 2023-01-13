@@ -1,0 +1,113 @@
+/*---------------------------------------------------------------------------
+Imagerie : TP2      Demo Camera
+
+Author : RB     Bts Info de Lorgues (83) France
+Date : 10/09/2021
+------------------------------------------------------------------------------*/
+
+
+//---------------------------------------------------------------------------
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+#include "C_VideoCapture.h"
+#include "C_ImageCouleur.h"
+#include "FindCaractereService.h"
+#include <string>
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+
+using namespace std;
+
+
+//------- Variables globales ------------------------------------------------
+TForm1 *Form1;
+C_VideoCapture MaCamera;
+C_ImageCouleur MonImage(640,480,680,80);
+//C_ImageCouleur MonImage2(320,240,896,54);
+
+//--------- Méthodes --------------------------------------------------------
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	Image1->Left = 680;
+    Image1->Top = 80;
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::B_CameraConnexionClick(TObject *Sender)
+{
+	if (MaCamera.handleAvicap32Dll != NULL)
+        Label1->Caption = "DLL Ok";
+	MaCamera.RechercherPeripherique();
+    Label2->Caption = MaCamera.GetNomDuPerif(0);
+
+	MaCamera.CreerFenetre(this->Handle, 10, 80, 640, 480);
+
+	if (MaCamera.ConnecterPeripherique(0) == true)
+		Label2->Caption = "OK";
+	else  Label2->Caption = "PB";
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::B_DemoMarquageClick(TObject *Sender)
+{
+
+MonImage.MarquerColonne(0,this->Canvas, clRed);
+MonImage.MarquerColonne(100,this->Canvas, clRed);
+MonImage.MarquerColonne(200,this->Canvas, clRed);
+MonImage.MarquerColonne(300,this->Canvas, clRed);
+MonImage.MarquerColonne(400,this->Canvas, clRed);
+MonImage.MarquerColonne(500,this->Canvas, clRed);
+MonImage.MarquerColonne(600,this->Canvas, clRed);
+MonImage.MarquerColonne(640,this->Canvas, clRed);
+
+MonImage.MarquerLigne(100,this->Canvas, clGreen);
+MonImage.MarquerLigne(200,this->Canvas, clGreen);
+MonImage.MarquerLigne(300,this->Canvas, clGreen);
+MonImage.MarquerLigne(400,this->Canvas, clGreen);
+MonImage.MarquerLigne(480,this->Canvas, clGreen);
+
+MonImage.MarquerPoint(10,10,this->Canvas, clBlue);
+
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::B_OuvrirFichierClick(TObject *Sender)
+{
+	AnsiString fileName = Edit1->Text.c_str();
+	// chargement de l'image
+	MonImage.LoadFromBmp(fileName);
+
+	// affichage dans le canevas de la fenêtre en utilisant la classe C_Image
+	Image1->Picture->LoadFromFile(fileName);
+	//MonImage.Afficher(Canvas);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::B_PrendrePhotoClick(TObject *Sender)
+{
+	// prise de la photo, mise à jour du fichier frame.bmp
+	MaCamera.CapturerFrame();
+
+	// affichage dans le composant graphique TImage
+	Image1->Picture->LoadFromFile("./frame.bmp");
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	// c'est ici que vous pouvez écrire votre code
+	FindCaractereService FindCaractere;
+	string limitationVitesse = FindCaractere.EncadrerCaractere();
+	Label4->Caption = limitationVitesse;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+    MaCamera.Close();
+}
+//---------------------------------------------------------------------------
+

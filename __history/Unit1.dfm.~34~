@@ -1,0 +1,156 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 642
+  ClientWidth = 1062
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 33
+    Top = 47
+    Width = 31
+    Height = 13
+    Caption = 'Label1'
+  end
+  object Label2: TLabel
+    Left = 123
+    Top = 47
+    Width = 31
+    Height = 13
+    Caption = 'Label2'
+  end
+  object Label3: TLabel
+    Left = 408
+    Top = 47
+    Width = 31
+    Height = 13
+    Caption = 'Label3'
+  end
+  object Image1: TImage
+    Left = 660
+    Top = 75
+    Width = 640
+    Height = 480
+  end
+  object Label4: TLabel
+    Left = 776
+    Top = 30
+    Width = 31
+    Height = 13
+    Caption = 'Label4'
+  end
+  object Shape1: TShape
+    Left = 700
+    Top = 56
+    Width = 1
+    Height = 485
+    Pen.Color = clRed
+  end
+  object Label5: TLabel
+    Left = 538
+    Top = 49
+    Width = 492
+    Height = 13
+    Caption = 
+      '0                    100                  200                  3' +
+      '00                  400                  500                  60' +
+      '0          640'
+  end
+  object Label6: TLabel
+    Left = 528
+    Top = 136
+    Width = 18
+    Height = 13
+    Caption = '100'
+  end
+  object Label7: TLabel
+    Left = 528
+    Top = 221
+    Width = 18
+    Height = 13
+    Caption = '200'
+  end
+  object Label8: TLabel
+    Left = 528
+    Top = 296
+    Width = 18
+    Height = 13
+    Caption = '300'
+  end
+  object Label9: TLabel
+    Left = 528
+    Top = 376
+    Width = 18
+    Height = 13
+    Caption = '400'
+  end
+  object Label10: TLabel
+    Left = 528
+    Top = 440
+    Width = 18
+    Height = 13
+    Caption = '480'
+  end
+  object B_CameraConnexion: TButton
+    Left = 33
+    Top = 16
+    Width = 121
+    Height = 25
+    Caption = 'B_CameraConnexion'
+    TabOrder = 0
+    OnClick = B_CameraConnexionClick
+  end
+  object B_PrendrePhoto: TButton
+    Left = 248
+    Top = 16
+    Width = 75
+    Height = 25
+    Caption = 'B_PrendrePhoto'
+    TabOrder = 1
+    OnClick = B_PrendrePhotoClick
+  end
+  object Edit1: TEdit
+    Left = 425
+    Top = 18
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    Text = 'Edit1'
+  end
+  object B_OuvrirFichier: TButton
+    Left = 552
+    Top = 16
+    Width = 75
+    Height = 25
+    Caption = 'B_OuvrirFichier'
+    TabOrder = 3
+    OnClick = B_OuvrirFichierClick
+  end
+  object B_DemoMarquage: TButton
+    Left = 840
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = 'B_DemoMarquage'
+    TabOrder = 4
+    OnClick = B_DemoMarquageClick
+  end
+  object Button1: TButton
+    Left = 700
+    Top = 16
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 5
+    OnClick = Button1Click
+  end
+end

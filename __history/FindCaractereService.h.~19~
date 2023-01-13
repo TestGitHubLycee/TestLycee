@@ -1,0 +1,15 @@
+//---------------------------------------------------------------------------
+
+#ifndef FindCaractereServiceH
+#define FindCaractereServiceH
+//---------------------------------------------------------------------------
+class FindCaractereService
+{
+    public:
+	char FindCaractere(int, int, int, int);
+    char ResultCharactere(int, int, int, int, int, int);
+	String EncadrerCaractere();
+	//void Test(int,int,int,int,int);
+};
+#endif
+

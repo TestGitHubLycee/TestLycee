@@ -1,0 +1,17 @@
+//---------------------------------------------------------------------------
+
+#ifndef FindCaractereServiceH
+#define FindCaractereServiceH
+#include <string>
+using namespace std;
+//---------------------------------------------------------------------------
+class FindCaractereService
+{
+    public:
+	char FindCaractere(int, int, int, int);
+    char ResultCharactere(int, int, int, int, int, int);
+	string EncadrerCaractere();
+	string ConvertToString(char*);
+};
+#endif
+

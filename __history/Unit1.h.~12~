@@ -1,0 +1,45 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// Composants gérés par l'EDI
+	TButton *B_CameraConnexion;
+	TLabel *Label1;
+	TButton *B_PrendrePhoto;
+	TEdit *Edit1;
+	TButton *B_OuvrirFichier;
+	TButton *B_DemoMarquage;
+	TLabel *Label2;
+	TLabel *Label3;
+	TImage *Image1;
+	TButton *Button1;
+	TLabel *Label4;
+	TLabel *Label5;
+	TLabel *Label6;
+	TLabel *Label7;
+	TLabel *Label8;
+	TLabel *Label9;
+	TLabel *Label10;
+	void __fastcall B_CameraConnexionClick(TObject *Sender);
+	void __fastcall B_DemoMarquageClick(TObject *Sender);
+	void __fastcall B_OuvrirFichierClick(TObject *Sender);
+	void __fastcall B_PrendrePhotoClick(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
+private:	// Déclarations utilisateur
+public:		// Déclarations utilisateur
+	__fastcall TForm1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif
