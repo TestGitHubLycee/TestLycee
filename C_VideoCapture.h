@@ -32,7 +32,7 @@ class C_VideoCapture
 	public:
         // ----- definitions pour l'acces aux fonctions systeme de capture video
 		HINSTANCE handleAvicap32Dll;
-		void InitDLL (void);
+		void InitDLL (void);//tyst
 		void Close();//TEST
 
 		BOOL WINAPI (*MaFonctionCapGetDriverDescription) (WORD wDriverIndex, LPTSTR lpszName, INT cbName, LPTSTR lpszVer, INT cbVer);
